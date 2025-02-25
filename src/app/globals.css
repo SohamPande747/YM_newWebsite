@@ -10,10 +10,16 @@
   }
 }
 
-html,
-body {
+html {
   max-width: 100vw;
   overflow-x: hidden;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
 }
 
 body {
@@ -33,10 +39,4 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
