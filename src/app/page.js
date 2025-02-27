@@ -25,24 +25,16 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [images.length]);
 
-  useEffect(() => {
-    fetch('/data/members.json')
-      .then((response) => response.json())
-      .then((data) => setMembersData(data))
-      .catch((error) => console.error('Error loading member data:', error));
-  }, []);
-
   return (
     <div>
       {/* Navigation Bar */}
       <nav className={styles.navbar}>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#social">Social</a></li>
           <li><a href="#domains">Domains</a></li>
-          <li><a href="#members">Members</a></li>
+          <li><a href="/members">Members</a></li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -91,33 +83,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Members Section */}
-      <section id="members" className={styles.members}>
-        <h2>Our Members</h2>
-        <select value={selectedYear} onChange={(e) => setSelectedYear(e.target.value)}>
-          {Object.keys(membersData).map((year) => (
-            <option key={year} value={year}>{year}</option>
-          ))}
-        </select>
-        <div className={styles.membersContainer}>
-          {membersData[selectedYear]?.length > 0 && (
-            <div className={styles.topMember}>
-              <img src={membersData[selectedYear][0].photo} alt={membersData[selectedYear][0].name} />
-              <h3>{membersData[selectedYear][0].name}</h3>
-              <p>{membersData[selectedYear][0].role}</p>
-            </div>
-          )}
-          <div className={styles.membersGrid}>
-            {membersData[selectedYear]?.slice(1).map((member, index) => (
-              <div key={index} className={styles.memberCard}>
-                <img src={member.photo} alt={member.name} />
-                <h3>{member.name}</h3>
-                <p>{member.role}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Social Media Links */}
       <section id="social" className={styles.social}>

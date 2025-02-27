@@ -1,0 +1,110 @@
+.members {
+  padding: 2rem 1rem;
+  text-align: center;
+  background-image: url(/images/bg.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between; /* Aligns heading left and selector right */
+  align-items: center;
+  width: 100%;
+  padding: 16px;
+}
+
+.yearSelector {
+  font-size: 1.2rem;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 2px solid #333;
+  background-color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+
+.heading {
+  font-size: 3rem;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.topMember {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.topMember .headsInfoContainer {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  background: #f4f4f4;
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ensuring all elements are centered dynamically */
+.clubHeads {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers all rows including the last one */
+  gap: 2rem;
+  max-width: 1500px;
+  margin: auto;
+}
+
+.headsInfoContainer {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 300px; /* Fixed width for consistency */
+}
+
+.headsInfoContainer:hover {
+  transform: scale(1.05);
+}
+
+.headsPhotoContainer {
+  width: 80%;
+  height: auto;
+}
+
+.clubHeadImage {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.headsInfo a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.headName {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+.headSubname {
+  font-size: 1rem;
+  color: #000000;
+}
