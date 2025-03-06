@@ -1,0 +1,52 @@
+/* app/styles/globals.css */
+
+/* Container for the gallery */
+.gallery-container {
+    padding: 1.5rem;
+}
+
+/* Style for each section */
+.section {
+    margin-bottom: 3rem;
+}
+
+/* Title of each section */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* Horizontal scrollable container for images */
+.image-slider {
+    display: flex;              /* Arrange images in a row */
+    overflow-x: scroll;         /* Enable horizontal scrolling */
+    gap: 1rem;                  /* Adds space between images */
+    scroll-snap-type: x mandatory;  /* Snap the images into place */
+    -webkit-overflow-scrolling: touch;  /* Smooth scrolling on mobile */
+    padding-bottom: 1rem;       /* Padding to prevent cutoff */
+}
+
+/* Container for each image */
+.image-container {
+    flex: 0 0 auto;             /* Prevent images from stretching */
+    width: 200px;               /* Fixed width for each image container */
+    height: 150px;              /* Fixed height for each image container */
+    overflow: hidden;           /* Hide overflow */
+    border-radius: 8px;         /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow for images */
+    scroll-snap-align: start;   /* Ensure images snap to start */
+}
+
+/* Image styling */
+.image {
+    width: 100%;                /* Make the image fill the container */
+    height: 100%;               /* Make the image fill the container */
+    object-fit: cover;          /* Ensure the image covers the container */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+}
+
+/* Hover effect on images */
+.image-container:hover .image {
+    transform: scale(1.05);     /* Slight zoom effect */
+}

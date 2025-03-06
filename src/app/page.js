@@ -31,18 +31,22 @@ export default function Home() {
       <nav className={styles.navbar}>
         <ul>
           <li><a href="#home">Home</a></li>
-          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="/gallery">Gallery</a></li>
           <li><a href="#social">Social</a></li>
           <li><a href="#domains">Domains</a></li>
           <li><a href="/members">Members</a></li>
-          <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
       {/* About Us Section */}
       <section id="about" className={styles.about}>
         <h2>About Us</h2>
-        <p>Yuva Marathi (Marathi Literary Association) is a Literary and Cultural Club functioning under the Office of Students' Welfare at Vellore Institute of Technology in Tamil Nadu. We focus on celebrating Marathi culture through various literary and cultural events.</p>
+        <p>Yuva Marathi (Marathi Literary Association) is a Literary and Cultural Club functioning under the Office of Students' Welfare 
+          at Vellore Institute of Technology in Tamil Nadu. We focus on celebrating Marathi culture through various literary and cultural events.</p>
+        <p>Right from grand cultural performances and joyful festivities to competitions and technical events, we at Yuva Marathi, 
+          conduct a wide range of events attended by thousands of students, be it online or offline. Although the pandemic has clipped our wings, 
+          we have embraced Social Media and have managed to stimulate our audience through a variety of online events and by introducing 
+          one enlightened speaker after the other.</p>
       </section>
 
       {/* Gallery Section */}

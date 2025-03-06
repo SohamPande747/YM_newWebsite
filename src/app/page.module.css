@@ -1,19 +1,37 @@
- /* Basic Styling for Navigation Bar */
+/* Improved Navbar Styling */
 .navbar {
-  background-color: #111111;  /* Dark black for the navbar */
-  padding: 1.5rem 2rem;
+  background-color: rgba(17, 17, 17, 0.95); /* Slight transparency for a sleek look */
+  padding: 1.2rem 2rem;
   position: fixed;
   width: 100%;
   z-index: 1000;
   top: 0;
   left: 0;
+  display: flex;
+  justify-content: space-between; /* Spacing between logo and nav links */
+  align-items: center;
+  transition: background 0.3s ease-in-out;
 }
 
+/* Logo Styling */
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Navbar Links */
 .navbar ul {
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  gap: 40px;
   margin: 0;
+  padding: 0;
 }
 
 .navbar li {
@@ -25,21 +43,96 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 1.1rem;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+/* Underline Hover Effect */
+.navbar li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #e67e22;
+  left: 50%;
+  bottom: -4px;
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.navbar li a:hover::after {
+  width: 100%;
 }
 
 .navbar li a:hover {
   color: #e67e22;
+  transform: translateY(-2px);
+}
+
+/* Sticky Navbar Effect */
+.navbar.scrolled {
+  background-color: rgba(17, 17, 17, 0.9);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsive Navbar */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none; /* Hide regular menu */
+  }
+
+  .navbar .menu-toggle {
+    display: block;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Mobile Dropdown */
+  .navbar.active ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: rgba(17, 17, 17, 0.95);
+    padding: 1rem;
+    gap: 20px;
+    text-align: center;
+  }
+}
+
+/* Ensure the entire page has the same background color */
+html, body {
+  background-color: #ffae42;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 /* About Us Section */
+/* About Us Section - Full Width */
 .about {
   background: #ffae42; /* Plain amber color */
-  padding: 120px 20px;
+  padding: 90px 5%; /* Adjust side padding for better spacing */
   text-align: center;
   color: #111111;
   animation: fadeIn 2s ease-in-out;
+  width: 100%; /* Ensures full width */
 }
+
+.about p {
+  font-size: 1.5rem;
+  line-height: 1.8;
+  max-width: 90%; /* Allows text to spread more */
+  margin: 0 auto;
+  color: #333333;
+  font-family: 'Lora', serif;
+  font-weight: 400;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
 
 .about h2 {
   font-size: 3rem;
@@ -52,22 +145,10 @@
   animation: slideInFromLeft 1s ease-out;
 }
 
-.about p {
-  font-size: 1.3rem;
-  line-height: 1.8;
-  max-width: 800px;
-  margin: 0 auto;
-  color: #333333;
-  font-family: 'Lora', serif;
-  font-weight: 400;
-  animation: fadeInUp 1.5s ease-in-out;
-}
-
 .about .highlight {
   font-weight: bold;
   color: #111111;
 }
-
 /* Gallery Section Styling */
 .gallery {
   display: flex;
@@ -84,7 +165,7 @@
   height: auto;
   object-fit: cover;
   border: 8px solid rgba(243, 156, 18, 0.6);
-  border-radius: 12px;
+  border-radius: 20px; /* More pronounced rounded corners */
   transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease-in-out;
   box-sizing: border-box;
   display: block;
@@ -100,6 +181,40 @@
   box-shadow: 0 15px 35px rgba(243, 156, 18, 0.5);
   filter: brightness(1.1);
 }
+/* Gallery Section Styling */
+.gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: #ffae42; /* Plain amber color */
+}
+
+.gallery img {
+  width: 75%;
+  height: auto;
+  object-fit: cover;
+  border: 8px solid rgba(243, 156, 18, 0.6);
+  border-radius: 20px; /* More pronounced rounded corners */
+  transition: transform 0.5s ease, box-shadow 0.5s ease, filter 0.5s ease-in-out;
+  box-sizing: border-box;
+  display: block;
+  margin: 0 auto;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 4px 30px rgba(255, 165, 0, 0.2);
+  overflow: hidden; /* Ensures that corners are visible */
+}
+
+/* Hover effect */
+.gallery img:hover {
+  transform: scale(1.08);
+  box-shadow: 0 15px 35px rgba(243, 156, 18, 0.5);
+  filter: brightness(1.1);
+}
+
 
 /* Domains Section Styling */
 .domains {
